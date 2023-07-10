@@ -11,11 +11,6 @@ export default defineNuxtConfig({
     "jose": resolve(__dirname, "node_modules/jose/dist/browser/index.js"),
     "@panva/hkdf": resolve(__dirname, "node_modules/@panva/hkdf/dist/web/index.js")
   },
-   authJs: {
-     verifyClientOnEveryRequest: true,
-     guestRedirectTo: "/",
-     baseUrl: "http://localhost:3000"
-   },
   runtimeConfig: {
     authJs: {
       secret: process.env.NUXT_NEXTAUTH_SECRET
