@@ -13,9 +13,9 @@ export const authOptions: AuthConfig = {
   secret: config.authJs.secret,
   providers: [
     AzureADProvider({
-        clientId: config.azureClientId,
-        clientSecret: config.azureClientSecret,
-        tenantId: config.azureTenantId
+        clientId: config.ad.clientId,
+        clientSecret: config.ad.clientSecret,
+        tenantId: config.ad.tenantId
     })
   ]
 }

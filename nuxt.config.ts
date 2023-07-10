@@ -14,22 +14,19 @@ export default defineNuxtConfig({
    authJs: {
      verifyClientOnEveryRequest: true,
      guestRedirectTo: "/",
-     baseUrl: "https://nuxt-auth-module.vercel.app"
+     baseUrl: "http://localhost:3000"
    },
   runtimeConfig: {
-    azureClientId: process.env.AZURE_AD_CLIENT_ID,
-    azureClientSecret: process.env.AZURE_AD_CLIENT_SECRET,
-    azureTenantId: process.env.AZURE_AD_TENANT_ID,
     authJs: {
       secret: process.env.NUXT_NEXTAUTH_SECRET
     },
-    github: {
-      clientId: process.env.NUXT_GITHUB_CLIENT_ID,
-      clientSecret: process.env.NUXT_GITHUB_CLIENT_SECRET
+    ad: {
+      clientId: process.env.AZURE_AD_CLIENT_ID,
+      clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
+      tenantId: process.env.AZURE_AD_TENANT_ID,
     },
     public: {
       authJs: {
-        baseUrl: process.env.NUXT_NEXTAUTH_URL, // The base URL is used for the Origin Check in prod only
         verifyClientOnEveryRequest: true
       }
     }
