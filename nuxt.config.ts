@@ -14,7 +14,7 @@ export default defineNuxtConfig({
    authJs: {
      verifyClientOnEveryRequest: true,
      guestRedirectTo: "/",
-     baseUrl: "http://localhost:3000"
+     baseUrl: "https://nuxt-auth-module.vercel.app"
    },
   runtimeConfig: {
     azureClientId: process.env.AZURE_AD_CLIENT_ID,
