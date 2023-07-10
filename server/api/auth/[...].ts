@@ -1,6 +1,5 @@
 import { NuxtAuthHandler } from "#auth"
 import AzureADProvider from "@auth/core/providers/azure-ad"
-import GithubProvider from "@auth/core/providers/github"
 import type { AuthConfig } from "@auth/core/types"
 
 // The #auth virtual import comes from this module. You can use it on the client
@@ -13,18 +12,11 @@ const config = useRuntimeConfig()
 export const authOptions: AuthConfig = {
   secret: config.authJs.secret,
   providers: [
-    /* GithubProvider({
-      clientId: config.github.clientId,
-      clientSecret: config.github.clientSecret
-    }) */
-
     AzureADProvider({
         clientId: config.azureClientId,
         clientSecret: config.azureClientSecret,
         tenantId: config.azureTenantId
     })
-
-
   ]
 }
 
