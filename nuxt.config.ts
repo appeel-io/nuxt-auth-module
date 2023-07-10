@@ -27,7 +27,11 @@ export default defineNuxtConfig({
     },
     public: {
       authJs: {
-        baseUrl: process.env.NUXT_NEXTAUTH_URL, // The base URL is used for the Origin Check in prod only
+        /* 
+          The base URL is used for the Origin Check in prod only, and is unnecessary in vercel
+          => https://authjs.dev/guides/basics/deployment
+        */
+        /* baseUrl: process.env.NUXT_NEXTAUTH_URL,  */
         verifyClientOnEveryRequest: true
       }
     }
